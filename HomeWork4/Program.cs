@@ -7,11 +7,11 @@ namespace HomeWork4
         static int Task1(int[] array)
         {
             int minValue = array[0];
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 1; i < array.Length; i++)
             {
-                if (minValue > array[i + 1])
+                if (minValue > array[i])
                 {
-                    minValue = array[i + 1];
+                    minValue = array[i];
                 }
             }
 
@@ -34,14 +34,13 @@ namespace HomeWork4
 
         static int Task3(int[] array)
         {
-            int minValue = array[0];
             int minValueIndex = 0;
-            for (int i = 0; i < array.Length - 1; i++)
+
+            for (int i = 1; i < array.Length; i++)
             {
-                if (minValue > array[i + 1])
+                if (array[minValueIndex] > array[i])
                 {
-                    minValue = array[i + 1];
-                    minValueIndex = i + 1;
+                    minValueIndex = i;
                 }
             }
 
@@ -82,9 +81,7 @@ namespace HomeWork4
 
             while (i < j)
             {
-                int temp = array[i];
-                array[i] = array[j];
-                array[j] = temp;
+                Swap(ref array[i], ref array[j]);
                 i++;
                 j--;
             }
@@ -176,12 +173,13 @@ namespace HomeWork4
             }
 
             Console.WriteLine();
+            Console.WriteLine(Task3(array));
 
-            Task8(array);
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write($"{array[i]} ");
-            }
+            //Task6(array);
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.Write($"{array[i]} ");
+            //}
         }
     }
 }
