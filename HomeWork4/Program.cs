@@ -81,9 +81,7 @@ namespace HomeWork4
 
             while (i < j)
             {
-                Swap(ref array[i], ref array[j]);
-                i++;
-                j--;
+                Swap(ref array[i++], ref array[j--]);
             }
 
             return array;
